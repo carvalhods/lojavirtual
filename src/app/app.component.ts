@@ -4,6 +4,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import { ProductsPage } from "../pages/products/products";
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -11,10 +13,10 @@ export class MyApp {
 
   @ViewChild(Nav) public nav: Nav;
   public pages = [
-    { title: 'Celulares', icon: 'phone-portrait', component: null },
-    { title: 'Games', icon: 'game-controller-b', component: null },
-    { title: 'Livros', icon: 'book', component: null },
-    { title: 'Informática', icon: 'laptop', component: null },
+    { title: 'Celulares', icon: 'phone-portrait', component: ProductsPage },
+    { title: 'Games', icon: 'game-controller-b', component: ProductsPage },
+    { title: 'Livros', icon: 'book', component: ProductsPage },
+    { title: 'Informática', icon: 'laptop', component: ProductsPage },
   ]
   rootPage:any = HomePage;
 
@@ -28,7 +30,6 @@ export class MyApp {
   }
 
   openPage(page): void {
-    console.log('ok');
-    // this.nav.push(page.component);
+    this.nav.push(page.component);
   }
 }
