@@ -11,35 +11,18 @@
 
 <ion-content>
   <ion-list>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/images/products/img1.jpg" />
+    <ion-item *ngFor="let product of products">
+      <ion-thumbnail item-start (click)="onClick(product)">
+        <img [src]="product.thumbnail" />
       </ion-thumbnail>
-      <h2>Galaxy J5 Prime SM-G570M</h2>
-      <p>Samsung</p>
-      <p>Código: 1000</p>
-      <h3>Preço: R$ 764,58</h3>
-      <button ion-button color="primary" round outline>Adicionar ao carrinho</button>
-    </ion-item>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/images/products/img2.jpg" />
-      </ion-thumbnail>
-      <h2>Galaxy J5 Duos SM-J500M/DS</h2>
-      <p>Samsung</p>
-      <p>Código: 1001</p>
-      <h3>Preço: R$ 741,06</h3>
-      <button ion-button color="primary" round outline>Adicionar ao carrinho</button>
-    </ion-item>
-    <ion-item>
-      <ion-thumbnail item-start>
-        <img src="assets/images/products/img3.jpg" />
-      </ion-thumbnail>
-      <h2>Zenfone Go Live ZB551KL</h2>
-      <p>Asus</p>
-      <p>Código: 1002</p>
-      <h3>Preço: R$ 699,00</h3>
-      <button ion-button color="primary" round outline>Adicionar ao carrinho</button>
+      <h2>{{ product.description }}</h2>
+      <p>{{ product.manufacturer }}</p>
+      <p>{{ product.code }}</p>
+      <h3>{{ product.price | currency:'BRL':true }}</h3>
+      <button ion-button color="primary" round outline
+        (click)="onButtonClick()">
+        Adicionar ao carrinho
+      </button>
     </ion-item>
   </ion-list>
 
@@ -49,10 +32,3 @@
     </button>
   </ion-fab>
 </ion-content>
-
-
-<!--
-Smartphone Samsung Galaxy J5 Prime SM-G570M, Quad Core 1.4Ghz, Android 6.0.1,Tela 5, 32GB, 13MP, Leitor Digital, Dual Chip, Desbl - Dourado
-Smartphone Samsung Galaxy J5 Duos SM-J500M/DS, Quad Core 1.2Ghz, Android 5.1, Tela 5, 16GB, 13MP, 4G, Dual Chip, Desbl - Dourado
-Smartphone Asus Zenfone Go Live ZB551KL -DTV- 1A011BR, Quad Core, Android 5.1, Tela 5.5´, 16GB,Câmera 13MP, 4G, Dual Chip Desbloqueado - Preto
--->
