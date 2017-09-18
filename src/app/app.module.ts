@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ProductsPageModule } from "../pages/products/products.module";
 import { CartPageModule } from "../pages/cart/cart.module";
+import { ProductDetailPageModule } from "../pages/product-detail/product-detail.module";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { CartPageModule } from "../pages/cart/cart.module";
     BrowserModule,
     ProductsPageModule,
     CartPageModule,
+    ProductDetailPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

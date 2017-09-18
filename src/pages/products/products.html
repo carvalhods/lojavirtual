@@ -12,15 +12,16 @@
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let product of products">
-      <ion-thumbnail item-start (click)="onClick(product)">
+      <ion-thumbnail item-start (click)="onProductSelected(product)">
         <img [src]="product.thumbnail" />
       </ion-thumbnail>
-      <h2>{{ product.description }}</h2>
-      <p>{{ product.manufacturer }}</p>
-      <p>{{ product.code }}</p>
-      <h3>{{ product.price | currency:'BRL':true }}</h3>
-      <button ion-button color="primary" round outline
-        (click)="onButtonClick()">
+      <div (click)="onProductSelected(product)">
+        <h2>{{ product.description }}</h2>
+        <p>{{ product.manufacturer }}</p>
+        <p>{{ product.code }}</p>
+        <h3>{{ product.price | currency:'BRL':true }}</h3>
+      </div>
+      <button ion-button color="primary" round outline>
         Adicionar ao carrinho
       </button>
     </ion-item>
@@ -28,7 +29,7 @@
 
   <ion-fab right bottom color="primary">
     <button ion-fab (click)="openCart()">
-      <ion-icon name="basket"></ion-icon>
+      <ion-icon name="cart"></ion-icon>
     </button>
   </ion-fab>
 </ion-content>

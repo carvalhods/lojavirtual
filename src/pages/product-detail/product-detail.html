@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Detalhes do produto</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img [src]="product.picture" />
+    <ion-card-content>
+      <ion-card-title>{{ product.description }}</ion-card-title>
+      <p>Marca: {{ product.manufacturer }}</p>
+      <p>Código: {{ product.code }}</p>
+      <h1>{{ product.price | currency:'BRL':true }}</h1>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

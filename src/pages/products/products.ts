@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { CartPage } from "../cart/cart";
+import { ProductDetailPage } from "../product-detail/product-detail";
 
 @IonicPage()
 @Component({
@@ -16,6 +17,7 @@ export class ProductsPage {
       manufacturer: 'Samsung',
       code: 1001,
       price: 764.58,
+      picture: 'assets/images/products/img1_1.jpg',
       thumbnail: 'assets/images/products/img1.jpg'
     },
     {
@@ -23,6 +25,7 @@ export class ProductsPage {
       manufacturer: 'Samsung',
       code: 1002,
       price: 741.06,
+      picture: 'assets/images/products/img2_2.jpg',
       thumbnail: 'assets/images/products/img2.jpg'
     },
     {
@@ -30,6 +33,7 @@ export class ProductsPage {
       manufacturer: 'Asus',
       code: 1003,
       price: 699,
+      picture: 'assets/images/products/img3_3.jpg',
       thumbnail: 'assets/images/products/img3.jpg'
     }
   ];
@@ -38,15 +42,12 @@ export class ProductsPage {
   }
 
   ionViewDidLoad() {
-    this.products = this.products.concat(this.products);
+    this.products = this.products.concat(this.products, this.products);
   }
 
-  onClick(product) {
+  onProductSelected(product) {
     console.log(product);
-  }
-
-  onButtonClick() {
-    console.log('Button Click');
+    this.navCtrl.push(ProductDetailPage, {productSelected: product});
   }
 
   openCart() {
