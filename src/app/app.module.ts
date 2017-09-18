@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ProductsPageModule } from "../pages/products/products.module";
+import { CartPageModule } from "../pages/cart/cart.module";
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ProductsPageModule } from "../pages/products/products.module";
   imports: [
     BrowserModule,
     ProductsPageModule,
+    CartPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
