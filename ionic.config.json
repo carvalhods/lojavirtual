@@ -1,6 +1,6 @@
 {
   "name": "LojaVirtual",
-  "app_id": "",
+  "app_id": "ebf1c712",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
